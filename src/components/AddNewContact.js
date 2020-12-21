@@ -1,6 +1,8 @@
 import React from 'react';
 import ContactList from './ContactList';
+import SortSearchBar from './SortSearchBar'
 import contactsData from '../Data/contactsData';
+
 
 
 class AddNewContact extends React.Component {
@@ -54,6 +56,23 @@ class AddNewContact extends React.Component {
       this.setState({ contactList: tempList });
     }
 
+    sortContactsHandler = () => {
+      let tempSortedList = [...this.state.contactList];
+      function compare(a, b) {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        let comparison = 0;
+        if (nameA > nameB) {
+          comparison = 1;
+        } else if (nameA < nameB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+      tempSortedList.sort(compare);
+      this.setState({ contactList: tempSortedList });
+    }
+
 
     render() {
       return (
@@ -82,6 +101,10 @@ class AddNewContact extends React.Component {
               <input type='submit' className="btn add-btn" value="+ Add"/>
             </form>
           </div>
+
+        <SortSearchBar 
+          sort={this.sortContactsHandler}
+        />  
 
         <ContactList 
           listOfContacts={this.state.contactList} 

@@ -94,7 +94,7 @@ li {
   display: inline-block;
 }
 
-.favorite-contact-cheched {
+.favorite-contact-checked {
   color: green;
 }
 
@@ -104,7 +104,11 @@ li {
   margin-left: 0;
 }
 
-/** add new section form styles  **/
+.sort-link:hover {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -155,7 +159,12 @@ li {
   padding: 0.5em 1em;
 }
 
-/** 740 make input and btn better **/
+
+/***
+ Media Queries for smaller screens
+***/
+
+/** 740 makes input and btn fit better **/
 @media only screen and (max-width: 740px) {
   .form-inline .input-custom {
     margin-bottom: 10px;
@@ -169,7 +178,7 @@ li {
   }
 }
 
-/** 625 make input and btn better **/
+/** 625 makes input and btn fit better **/
 @media only screen and (max-width: 625px) {
 
   .form-inline .input-custom {
@@ -195,8 +204,7 @@ li {
   }
 }
 
-
-/** 550 make rows better - icons crowding text ***/
+/** 550 makes icons fit better ***/
 @media only screen and (max-width: 550px) {
 
   .list-group-item {

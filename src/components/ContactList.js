@@ -12,7 +12,7 @@ class ContactList extends React.Component {
 
     return (
       <React.Fragment>
-      <p className="contacts-section-title">Favorite Contacts</p> 
+      <p className="contacts-section-title">Favorite Contacts (Add favorites by clicking the star icon)</p> 
       <ul className="list-group">
 
         {this.props.listOfContacts.map( (contact, index) => {
@@ -53,7 +53,7 @@ class ContactList extends React.Component {
             <div className="list-section delete-icon-list">
               { 
                 contact.favorite ? 
-                <span className="favorite-contact-cheched" title="Already in Favorites"  >
+                <span className="favorite-contact-checked" title="Already in Favorites"  >
                   &#10003;
                 </span>
                 : 
